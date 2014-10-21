@@ -23,6 +23,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include <errno.h>
+#include <string.h>
 
 void push_asic_read(uint8_t asic_addr, uint8_t engine_addr ,  uint32_t offset, uint32_t* p_value);
 int squid_wait_asic_reads();
@@ -32,6 +33,10 @@ int squid_wait_asic_reads();
 
 
 int main(int argc, char *argv[]) {
+  if ((argc > 1) && (strcmp(argv[1], "-v") == 0)) {
+      printf("%s version %s\n", argv[0], PACKAGE_VERSION); 
+      return 0;
+  }
 
   init_spi();
   

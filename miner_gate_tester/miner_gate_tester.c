@@ -116,6 +116,10 @@ void fill_random_work2(minergate_do_job_req_sp30* work) {
 
 int main(int argc, char* argv[])
 {
+  if ((argc > 1) && (strcmp(argv[1], "-v") == 0)) {
+      printf("%s version %s\n", argv[0], PACKAGE_VERSION); 
+      return 0;
+  }
  if (argc == 4) {
     leading_zeroes = atoi(argv[1]);
     jobs_per_time= atoi(argv[2]);    

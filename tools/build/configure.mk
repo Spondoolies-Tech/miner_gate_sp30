@@ -11,16 +11,17 @@ export HAMMER_REG := y
 export PATH:=/opt/arm-2013.05/bin:$(PATH)
 export CROSS_COMPILE=arm-none-linux-gnueabi-
 
-export CXXFLAGS = 			\
-	-O0			  			\
-	-g 						\
-	-rdynamic				\
-	-fpermissive 			\
-	-lpthread 				\
-	-static-libstdc++ 		\
-	-static-libgcc 			\
-	-I$(ROOT)/miner_gate	\
-	-I$(ROOT)/i2ctools		\
+export CXXFLAGS = 					\
+	-O0			  					\
+	-g 								\
+	-rdynamic						\
+	-fpermissive 					\
+	-lpthread 						\
+	-static-libstdc++ 				\
+	-static-libgcc 					\
+	-I$(ROOT)/miner_gate			\
+	-I$(ROOT)/i2ctools				\
+	-DPACKAGE_VERSION=$(VERSION) 	\
 
 export XLDFLAGS :=	\
 	-pthread       	\

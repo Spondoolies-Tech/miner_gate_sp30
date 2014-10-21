@@ -1541,6 +1541,10 @@ void restart_asics_part(const char * why) {
 
 
 int main(int argc, char *argv[]) {
+  if ((argc > 1) && (strcmp(argv[1], "-v") == 0)) {
+      printf("%s version %s\n", argv[0], PACKAGE_VERSION); 
+      return 0;
+  }
   printf(RESET);  
   vm.start_run_time = time(NULL);
   int s;
